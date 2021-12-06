@@ -1,0 +1,14 @@
+# vs code
+.metals/
+.history/
+target/
+
+# node/npm
+node_modules/
+
+# mac
+.DS_Store
+
+
+# scala
+.bsp/

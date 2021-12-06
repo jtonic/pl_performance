@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "perf_python"
+		},
+		{
+			"path": "perf_rust"
+		},
+		{
+			"path": "perf_scala"
+		},
+		{
+			"path": "PerfHaskell"
+		},
+		{
+			"path": "perf_js"
+		}
+	],
+	"settings": {
+		"files.watcherExclude": {
+			"**/target": true
+		}
+	}
+}
