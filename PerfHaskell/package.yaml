@@ -1,14 +1,14 @@
-name:                PerfHaskell
-version:             0.1.0.0
-github:              "jtonic/PerfHaskell"
-license:             BSD3
-author:              "Antonel-Ernest Pazargic"
-maintainer:          "antonel.pazargic@gmail.com"
-copyright:           "2021 Antonel-Ernest Pazargic"
+name: PerfHaskell
+version: 0.1.0.0
+github: "jtonic/PerfHaskell"
+license: BSD3
+author: "Antonel-Ernest Pazargic"
+maintainer: "antonel.pazargic@gmail.com"
+copyright: "2021 Antonel-Ernest Pazargic"
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
+  - ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -17,32 +17,53 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/jtonic/PerfHaskell#readme>
+description: Please see the README on GitHub at <https://github.com/jtonic/PerfHaskell#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.7 && < 5
+  - rio
+  - say
+  - wreq
+  - async
+  - timeit
+  - lens
+  - utf8-string
+
+default-extensions:
+  - OverloadedStrings
+  - LambdaCase
+  - NoImplicitPrelude
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
 
 library:
   source-dirs: src
 
 executables:
   PerfHaskell-exe:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - PerfHaskell
+      - PerfHaskell
 
 tests:
   PerfHaskell-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - PerfHaskell
+      - PerfHaskell

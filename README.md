@@ -29,7 +29,8 @@ See the performance [result](./results.md)
   ```shell
   $ cd PerfHaskell
   $ stack build --fast
-  $ stack run PerfHaskell
+  $ stack run PerfHaskell -- +RTS -N # using all cores
+  $ stack run PerfHaskell -- +RTS -N2 # using two cores
   ```
 
 5. __Java/Vert.x application__
@@ -37,6 +38,8 @@ See the performance [result](./results.md)
 6. __Kotlin application__
 
 7. __Go application__
+
+9. __Swift application__
 
 
 
