@@ -12,6 +12,13 @@ __Target:__
   - (more important) get the most performant application with the `for the impatient` approach
   - (and in the end) the following matters: performance (70%), conciseness (5), readability (10) and developer experience (15)
 
+## <span style="color:green">__Bash script__</span>
+---
+
+__Notes:__
+
+1. Sync with __cURL__: `29.947` seconds
+
 ## <span style="color:green">__Python__</span>
 ---
 
