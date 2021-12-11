@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "perf_js"
+		},
+		{
+			"path": "perf_bash_curl"
 		}
 	],
 	"settings": {
