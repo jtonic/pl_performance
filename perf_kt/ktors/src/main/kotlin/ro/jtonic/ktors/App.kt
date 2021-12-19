@@ -9,7 +9,6 @@ import io.ktor.server.netty.*
 import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.minutes
 import kotlin.time.ExperimentalTime
 
 fun main(args: Array<String>): Unit = EngineMain.main(args)
@@ -38,7 +37,12 @@ private fun Application.configureRouting() {
                             email = "fname.lname$it@gmail.com"
                         )
                     }
-                    .onEach{ delay(30.milliseconds)}
+                    .onEach{
+                        val delayInMillis =
+                            environment.config.propertyOrNull("ktors.delay_in_millis")?.getString()
+                                ?.toLong() ?: 10
+                        delay(delayInMillis)
+                    }
                     .fold(emptyList()) { acc, i -> acc + i }
             call.respond(customers)
         }
