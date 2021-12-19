@@ -4,7 +4,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from threading import local
 
-url_list = ["https://www.google.com/", "https://www.bing.com"] * 50
+url_list = ["http://localhost:8080/", "http://localhost:8080/"] * 50
 thread_local = local()
 
 

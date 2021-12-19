@@ -2,7 +2,7 @@ import requests
 from requests.sessions import Session
 import time
 
-url_list = ["https://www.google.com/", "https://www.bing.com"] * 50
+url_list = ["http://localhost:8080/", "http://localhost:8080/"] * 50
 
 
 def download_link(url: str, session: Session):

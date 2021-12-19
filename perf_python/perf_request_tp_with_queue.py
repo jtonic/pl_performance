@@ -4,7 +4,7 @@ import time
 from threading import Thread, local
 from queue import Queue
 
-url_list = ["https://www.google.com/", "https://www.bing.com"] * 50
+url_list = ["http://localhost:8080/", "http://localhost:8080/"] * 50
 q = Queue(maxsize=0)  # Use a queue to store all URLs
 for url in url_list:
     q.put(url)

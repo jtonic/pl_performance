@@ -12,7 +12,7 @@ def download_all(urls: list) -> None:
         download_link(url)
 
 
-url_list = ["https://www.google.com/", "https://www.bing.com"] * 50
+url_list = ["http://localhost:8080/", "http://localhost:8080/"] * 50
 start = time.time()
 download_all(url_list)
 end = time.time()

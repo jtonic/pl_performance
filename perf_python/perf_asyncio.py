@@ -21,8 +21,7 @@ async def download_all(urls: list):
         # the await must be nest inside of the session
         await asyncio.gather(*tasks, return_exceptions=True)
 
-url_list = ["https://www.google.com", "https://www.bing.com"] * 50
-print(url_list)
+url_list = ["http://localhost:8080/", "http://localhost:8080/"] * 50
 start = time.time()
 asyncio.run(download_all(url_list))
 end = time.time()
