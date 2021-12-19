@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "perf_bash_curl"
+		},
+		{
+			"path": "perf_kt"
 		}
 	],
 	"settings": {
