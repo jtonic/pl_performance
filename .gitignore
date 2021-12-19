@@ -1,6 +1,8 @@
 # vs code
-.metals/
+# vs-code
 .history/
+
+# maven
 target/
 
 # node/npm
@@ -9,6 +11,17 @@ node_modules/
 # mac
 .DS_Store
 
-
 # scala
 .bsp/
+.metals/
+
+# Gradle
+.gradle/
+build
+
+# IntelliJ Idea
+.idea/*
+!.idea/runConfigurations/
+
+# miscs
+perf_kt/**/bin/
