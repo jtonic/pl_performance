@@ -20,3 +20,9 @@ val Long.format: String
         val df = DecimalFormat.getInstance(Locale("ro", "RO"))
         df.format(this)
     }
+
+val Double.format: String
+    get() = run {
+        val df = DecimalFormat.getInstance(Locale("ro", "RO"))
+        df.format(this)
+    }

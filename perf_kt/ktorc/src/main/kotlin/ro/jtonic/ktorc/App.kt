@@ -9,22 +9,25 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import ro.jtonic.common.format
 import ro.jtonic.common.getUrls
-import kotlin.system.measureTimeMillis
+import kotlin.time.DurationUnit
+import kotlin.time.ExperimentalTime
+import kotlin.time.measureTime
 import ro.jtonic.common.Url as URL
 
+@OptIn(ExperimentalTime::class)
 suspend fun main() {
     runBlocking() {
         val httpClient = HttpClient(OkHttp)
 
         println("Start the execution of 100 HTTP calls.")
-        val execTimeMillis = measureTimeMillis {
+        val execTime = measureTime {
             getUrls().mapIndexed { idx, url ->
                 async(Dispatchers.IO) { call(idx + 1, httpClient, url) }
             }.forEach {
                 it.await()
             }
-        }
-        println("Execution time [millis]: ${execTimeMillis.format}")
+        }.toDouble(DurationUnit.SECONDS)
+        println("Execution time [seconds]: ${execTime.format}")
         httpClient.close()
     }
 }

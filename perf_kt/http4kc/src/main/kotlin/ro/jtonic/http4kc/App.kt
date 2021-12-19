@@ -7,21 +7,22 @@ import org.http4k.core.Request
 import ro.jtonic.common.Url as URL
 import ro.jtonic.common.format
 import ro.jtonic.common.getUrls
-import kotlin.system.measureTimeMillis
+import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
+import kotlin.time.measureTime
 
 @OptIn(ExperimentalTime::class)
 fun main() {
     val httpClient = ApacheClient()
     println("Start the execution of 100 HTTP calls.")
-    val execTimeMillis = measureTimeMillis {
+    val execTime = measureTime {
         getUrls()
             .forEachIndexed { idx, url ->
                 val response = call(idx + 1, httpClient, url)
                 response.body
             }
-    }
-    println("Execution time [millis]: ${execTimeMillis.format}")
+    }.toDouble(DurationUnit.SECONDS)
+    println("Execution time [seconds]: ${execTime.format}")
 }
 
 private fun call(

@@ -3,6 +3,15 @@ See the performance [result](./results.md)
 
 ## How to run applications.
 
+0. Start the HTTP server (ktor).
+
+  ```shell
+  $ cd perf_kt
+  $ gradle :ktors:run
+  ```
+
+  Notes:
+  > By default the latency of the endpoint is around `1 second`
 
 1. __Python scripts__
 
@@ -11,7 +20,7 @@ See the performance [result](./results.md)
 2. __JS application__
 
   ```shell
-  $ cd to perf_js
+  $ cd perf_js
   $ nmp install
   $ npm start
   ```
@@ -37,9 +46,27 @@ See the performance [result](./results.md)
 
 6. __Kotlin application__
 
+  - build the gradle multi project
+  ```shell
+  $ cd perf_kt
+  $ gradle build
+  ```
+
+  - run ktor client (async with coroutines)
+  ```shell
+  $ gradle :ktorc:run
+  ```
+
+  - run http4k client (sync):
+  ```shell
+  $ gradle :http4kc:run
+  ```
+
+
+
 7. __Go application__
 
-9. __Swift application__
+8. __Swift application__
 
 
 
