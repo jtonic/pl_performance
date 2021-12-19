@@ -3,12 +3,14 @@
  */
 package ro.jtonic.ktors
 
-import kotlin.test.Test
-import kotlin.test.assertNotNull
+import io.kotest.core.spec.style.FreeSpec
+import io.kotest.matchers.shouldNotBe
 
-class AppTest {
-    @Test fun appHasAGreeting() {
-        val classUnderTest = App()
-        assertNotNull(classUnderTest.greeting, "app should have a greeting")
+class AppTest : FreeSpec() {
+
+    init {
+        "a customer should be valid (not null)" {
+            Customer(id = "1", firstName = "Antonel", lastName = "Pazargic", email = "myemail@gmail.com") shouldNotBe null
+        }
     }
 }

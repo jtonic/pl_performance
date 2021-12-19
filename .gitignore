@@ -20,8 +20,8 @@ node_modules/
 build
 
 # IntelliJ Idea
-.idea/*
-!.idea/runConfigurations/
+**/.idea/*
+!**/.idea/runConfigurations/
 
 # miscs
 perf_kt/**/bin/
