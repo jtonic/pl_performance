@@ -40,7 +40,7 @@ def downloadLink(url: URL): Future[Unit] = Future {
 }
 
 // Scala version of Python's: url_list = ["https://www.google.com","https://www.bing.com"]*50
-val urls = List("https://www.google.com/","https://www.bing.com").map(new URL(_))
+val urls = List("http://localhost:8080/","http://localhost:8080/").map(new URL(_))
 val urlList = LazyList.continually(urls)
   .flatten
   .take(100)

@@ -34,14 +34,14 @@ function download_batch(u_list) {
 
 async function download_all(u_list) {
     let loop_count = u_list.length / batch_num;
-    console.time("test");
+    console.time("download_all");
     for (var i = 0; i < loop_count; i++) {
         await new Promise((resolve, _) => {
             download_batch(u_list.slice(i * 10, i * 10 + 10));
             resolvehandler = resolve;
         });
     }
-    console.timeEnd("test");
+    console.timeEnd("download_all");
 }
 
 download_all(url_list);

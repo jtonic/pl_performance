@@ -21,7 +21,7 @@ See the performance [result](./results.md)
 
   ```shell
   $ cd perf_js
-  $ nmp install
+  $ npm install
   $ npm start
   ```
 
@@ -61,8 +61,6 @@ See the performance [result](./results.md)
   ```shell
   $ gradle :http4kc:run
   ```
-
-
 
 7. __Go application__
 

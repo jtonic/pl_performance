@@ -3,7 +3,7 @@
 download_all() {
     for ((i=1; i<=50; i++))
     do
-        urls=("https://www.google.com"  "https://www.bing.com")
+        urls=("http://localhost:8080/"  "http://localhost:8080/")
         for value in ${urls[*]}
         do
             echo "[$i] read from $value"
