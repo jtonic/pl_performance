@@ -11,13 +11,29 @@
   - (more important) get the most performant application with the `for the impatient` approach
   - (and in the end) the following matters: performance (70%), conciseness (5), readability (10) and developer experience (15)
 
-## <span style="color:green">**Bash script**</span>
+<br/>
+<br/>
+<br/>
 
----
+| Language  | Parcon | Technologies                   | Latency (sec) | Rating |
+| --------- | ------ | ------------------------------ | ------------- | ------ |
+| scala     | async  | BufferedInputStream/Future     | 5.71          |        |
+| js        | async  | node/request/promise           | 10.09         |        |
+| python    | async  | request, threads, queue        | 11.37         |        |
+| python    | async  | asyncio, aiohttp               | 11.40         |        |
+| python    | async  | requests, thread pool executor | 11.48         |        |
+| kotlin    | async  | ktor client                    | 22,633        |        |
+| python    | sync   | requests                       | 113.72        |        |
+| python    | sync   | request & tpc conn pool        | 114.01        |        |
+| kotlin    | sync   | http4k                         | 115,27        |        |
+| haskell   | sync   | Wreq                           | 123.65        |        |
+| bash/cURL | sync   |                                | 172.03        |        |
+| java      | async  | Vert.x                         |               |        |
+| rust      |        |                                |               |        |
+| swift     |        |                                |               |        |
+| go        |        |                                |               |        |
 
-**Notes:**
 
-1. Sync with **cURL**: `29.947` seconds
 
 ## <span style="color:green">**Python**</span>
 
@@ -27,16 +43,6 @@
 
 > Examples from https://python.plainenglish.io/send-http-requests-as-fast-as-possible-in-python-304134d46604
 
-1. Sync with **requests**: `115.76` seconds
-
-2. Sync with **requests** and tcp connections pool: `117.82` seconds
-
-3. Async with **threads** and **queue**: `12.25` seconds
-
-4. Async with **ThreadPoolExecutor**: `12.25` seconds
-
-5. Async with **asyncio** and **aiohttp**: `11.78` seconds
-
    **Rating:**
 
    - Developer experience: 4
@@ -44,17 +50,12 @@
      - sync: 3
      - async: 5
 
+  - Overall:
+
 ## <span style = "color:green">**JavaScript / Node**</span>
 
----
-
-1. async/await (with request package): `to be updated and rerun` seconds
 
 ## <span style="color:green">**Scala**</span>
-
----
-
-**Notes:**
 
 > Examples from https://gist.github.com/hohonuuli/7ebfd438f297ef3ee7fc843920936ba9
 
@@ -83,9 +84,13 @@
 
 ---
 
-1. sync with http4k: `115,27` seconds
+   - Developer experience: 4
+   - Performance:
+     - sync: 3
+     - async: 4
 
-2. async with ktor client (OkHttp): `23,63` seconds
+  - Overall:
+
 
 ## Java / Vert.x
 
@@ -98,21 +103,3 @@
 ## [Optional] Swift
 
 ---
-
-| Language  | Parcon | Technologies                   | Latency (sec) | Rating |
-| --------- | ------ | ------------------------------ | ------------- | ------ |
-| scala     | async  | BufferedInputStream/Future     | 5.71          |        |
-| js        | async  | node/request/promise           | 10.09         |        |
-| python    | async  | request, threads, queue        | 11.37         |        |
-| python    | async  | asyncio, aiohttp               | 11.40         |        |
-| python    | async  | requests, thread pool executor | 11.48         |        |
-| kotlin    | async  | ktor client                    | 22,633        |        |
-| python    | sync   | requests                       | 113.72        |        |
-| python    | sync   | request & tpc conn pool        | 114.01        |        |
-| kotlin    | sync   | http4k                         | 115,27        |        |
-| haskell   | sync   | Wreq                           | 123.65        |        |
-| bash/cURL | sync   |                                | 172.03        |        |
-| java      | async  | Vert.x                         |               |        |
-| rust      |        |                                |               |        |
-| swift     |        |                                |               |        |
-| go        |        |                                |               |        |
